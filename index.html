@@ -18,7 +18,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: radial-gradient(
@@ -119,9 +119,28 @@
         .nav-item {
             padding: 0 10px;
         }
+        .navbar-light .navbar-nav .nav-link {
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+        }
         .nav-link {
+            color: rgba(0,0,0,.55);
             z-index: 10;
             position:relative;
+        }
+        .launch-link {
+            padding:2px 15px; 
+            background:hsla(0, 0%, 99%, 0.598); 
+            border:none; border-radius:12px;
+            margin-top:5px;
+            margin-left:5px;
+            -webkit-transition:all 200ms ease;
+            transition:all 200ms ease;
+        }
+        .launch-link:hover {
+            background: rgb(70, 222, 212);
+            color: white;
         }
         .nav-bg {
             background-image: linear-gradient(rgba(255, 255, 255, 1)), var(rgba(255, 255, 255, 0));
@@ -176,15 +195,9 @@
                     <a class="nav-link" href="https://calendly.com/wzdm/session" title="Contact Amethyst">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link launch-link" 
-                        style=
-                            "padding:2px 15px; 
-                            background:hsla(0, 0%, 99%, 0.598); 
-                            border:none; border-radius:12px;
-                            margin-top:5px;
-                            margin-left:5px;
-                            -webkit-transition:all 200ms ease;
-                            transition:all 200ms ease;">Launch App</a>
+                        <a class="nav-link launch-link" href="https://wzdmatl.github.com/dex" target="_blank"
+                        >Launch App
+                        </a>
                     </li>
                 </ul>
             </div>
