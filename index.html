@@ -37,14 +37,15 @@
             margin: 0;
             font-family: var(--default-font-family);
             line-height: 1.5;
-            background: white;
+            background: rgba(229, 255, 255, 0.673);
             overflow-x: hidden;
             /* min-height: 100vh; */
         }
+
+        /* NAVBAR STYLING */
         nav {
             /* padding: 10px 50px; */
             font-family: var(--heading-font-family);
-            background:rgb(160, 151, 235);
         }
         nav ul {
             padding: 0;
@@ -64,7 +65,7 @@
         nav a:hover,
         nav li.active a {
             color: black;
-            background: rgb(229, 255, 255);
+            background: radial-gradient(621px at 25.3% 13.8%, rgba(255, 255, 255, 0.591) 0%, rgb(229, 255, 255) 90%);
             border: none;
             border-radius: 12px;
             /* padding: 10px; */
@@ -72,21 +73,34 @@
         span.logo-title {
             font-size: 12px;
         }
+        .navbar {
+            background: transparent;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            z-index: 100;
+            width: 100%;
+        }
         .navbar-brand {
             margin-right: unset;
+            padding-top: unset;
+            padding-bottom: unset;
+            white-space: unset;
         }
         .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
             display: flex;
             flex-wrap: inherit;
             align-items: center;
             justify-content: space-between;
+            max-width: 1210px;
             /* margin-top: -23px; */
             /* margin-bottom: -3px; */
         }
-        .navbar-brand {
-            padding-top: unset;
-            padding-bottom: unset;
-            white-space: unset;
+        .navbar-toggler {
+            z-index: 5;
+            position: relative;
         }
         .navbar-collapse {
             flex-basis: 100%;
@@ -96,52 +110,150 @@
         .logo {
             /* margin-top: 25px; */
             /* margin-bottom: -10px; */
+             z-index: 10;
+            position:relative;
         }
         .d-block {
             display: flow-root;
+        }
+        .nav-item {
+            padding: 0 10px;
+        }
+        .nav-link {
+            z-index: 10;
+            position:relative;
+        }
+        .nav-bg {
+            background-image: linear-gradient(rgba(255, 255, 255, 1)), var(rgba(255, 255, 255, 0));
+            backdrop-filter: blur(12px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: transparent;
         }
         @media (max-width: 385px) {
             span.logo-title {
                 font-size: 9px;
             }
         }
+
+        /* HERO STYLING */
+        .hero {
+            padding-top: 5rem;
+        }
     </style>
 </head>
 <body>
     <header>
 
-      <nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="https://www.wzdmatl.github.com/dex">
-        <img src="src/images/logo-light64.png" class="logo d-none d-md-block" alt="WZDM DEX Template">
-        <img src="src/images/logo-light64.png" class="logo d-block d-md-none" alt="WZDM DEX Template">
-        <!-- <span class="logo-title">WZDM Blockchain Templates</span> -->
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" title="Homepage">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.wzdmatl.github.com/dex" title="DEX">DEX</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="project/about.html" title="Exclusive Content for NFT Holders">Exclusive Content</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="project/work.html" title="NFT Holders Mint Free">Mint Free</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://calendly.com/wzdm/session" title="Contact Amethyst">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.wzdmatl.github.com/dex">
+                <img src="src/images/logo-light64.png" class="logo d-none d-md-block" alt="WZDM DEX Template">
+                <img src="src/images/logo-light64.png" class="logo d-block d-md-none" alt="WZDM DEX Template">
+                <!-- <span class="logo-title">WZDM Blockchain Templates</span> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" title="Homepage">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="https://www.wzdmatl.github.com/dex" title="DEX">DEX</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="project/about.html" title="Exclusive Content for NFT Holders">Exclusive Content</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="project/work.html" title="NFT Holders Mint Free">Mint Free</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="https://calendly.com/wzdm/session" title="Contact Amethyst">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link launch-link" 
+                        style=
+                            "padding:2px 15px; 
+                            background:hsla(0, 0%, 99%, 0.598); 
+                            border:none; border-radius:12px;
+                            margin-top:5px;
+                            margin-left:5px;
+                            -webkit-transition:all 200ms ease;
+                            transition:all 200ms ease;">Launch App</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-bg"></div>
+      </nav>
 
+        <div class="hero">
+            <h1>Placeholder title</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1>Placeholder title</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1>Placeholder title</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1>Placeholder title</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1>Placeholder title</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
     </header>
 
 
