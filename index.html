@@ -33,6 +33,19 @@
             --heading-font-family: 'Poppins', sans-serif;
             --default-font-family: "Prata", serif;
         }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
             margin: 0;
             font-family: var(--default-font-family);
@@ -140,7 +153,7 @@
             position:relative;
         }
         .nav-link:hover {
-            color: rgb(238, 238, 238);
+            color: black;
         }
         .launch-link {
             padding:2px 15px; 
@@ -152,7 +165,7 @@
             transition:all 200ms ease;
         }
         .launch-link:hover {
-            background: rgb(70, 222, 212);
+            background: #60E1ED;
             color: white;
         }
         .nav-bg {
@@ -182,8 +195,9 @@
             margin: 0.67em 0;
         }
         .hero {
-            padding-top: 7.5rem;
-            padding-bottom: 5rem;
+            /*padding-top: 7.5rem;*/
+            padding: 30vh 42px 10vh 78px;
+            /*padding-bottom: 5rem;*/
             min-height: 20vh;
             background-color: #2c3437;
             color: var(--secondary-color);
@@ -205,13 +219,15 @@
         }
         .flexbox {
             display: flex;
+            -webkit-box-pack: justify;
             justify-content: space-between;
+            -webkit-box-align: center;
             align-items: center;
         }
         .left-block {
-            /*min-width: 545px;*/
+            min-width: 400px;
             margin-right: 100px;
-            margin-bottom: 54px;
+            margin-bottom: 60px;
         }
         .right-block {
             position: relative;
@@ -235,10 +251,14 @@
             line-height: inherit;
             text-decoration: none;
             cursor: pointer;
+            box-shadow: rgba(6, 226, 255, 0.351) 0px 2px 29px 0px;
+        }
+        .w-button:hover {
+            color: white;
         }
         .ghost-button {
             margin-left: 35px;
-            padding: 15px 32px;
+            padding: 9px 32px;
             border-style: solid;
             border-width: 1px;
             border-color: #fff;
@@ -250,6 +270,12 @@
             color: #fff;
             font-size: 16px;
             font-weight: 500;
+            box-shadow: rgba(255, 255, 255, 0.105) 0px 2px 29px 0px;
+
+        }
+        .ghost-button:hover {
+            background:hsl(185, 80%, 65%);
+            color: white;
         }
         img {
             vertical-align: middle;
@@ -277,18 +303,33 @@
             bottom: 35%;
             max-width: 80%;
         }
-      @media screen and (max-width: 991px) {
+        @media screen and (min-width: 1168px) {
+        .image-3 {
+            width: 520px;
+        }
+        }
+        @media screen and (max-width: 1168px) {
+        .image-3 {
+            margin: 0px 20px 0px 0px;
+            width: 370px;
+        }
+        }
+        @media screen and (max-width: 991px) {
         .hero {
-            padding: 170px 903px 120px 46px;
+            padding: 130px 42px 122px 52px;
         }
         .hero-heading {
             font-size: 40px;
+        }
+        .left-block {
+            min-width: 316px;
         }
         .right-block {
             margin-left: -60px;
         }
         .image-3 {
             margin: 0px 5px 0px 59px;
+            width: 320px; 
         }
         .button {
             padding: 10px 18px;
@@ -300,9 +341,22 @@
             font-size: 14px;
         }
         }
+        @media screen and (max-width: 882px) {
+        .hero {
+            padding: 128px 46px 115px 65px;
+        }
+        .right-block {
+            margin-left: -140px;
+        }
+        }
+        @media (min-width: 808px) and (max-width: 900px) {
+        .left-block {
+            width: 370px;
+        }
+        }
         @media screen and (max-width: 767px) {
         .hero {
-            padding-top: 30px;
+            padding-top: 125px;
             padding-bottom: 50px;
             padding-left: 40px;
         }
@@ -320,8 +374,8 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            margin-left: 442px;
-            margin-top: 125px;
+            /*margin-left: 442px;
+            margin-top: 125px;*/
         }
         .left-block {
             position: relative;
@@ -354,7 +408,7 @@
         @media screen and (max-width: 479px) {
         .hero {
             display: block;
-            padding-top: 35px;
+            padding-top: 145px;
             padding-bottom: 66px;
         }
         .hero-heading {
@@ -362,6 +416,9 @@
         }
         .flexbox.hero-flexbox {
             margin-bottom: 0px;
+        }
+        .left-block {
+            min-width: 227px;
         }
         .div-block-6 {
             display: flex;
@@ -382,6 +439,9 @@
 
 
         /* FOOTER STYLING */
+        footer {
+            background-color: #2c3437;
+        }
         h5 {
             line-height: 44px;
             font-weight: 400;
@@ -407,6 +467,13 @@
             color: #fff;
             font-size: 16px;
         }
+        .dev-link {
+            color: white;
+            text-decoration: none;
+        }
+        .dev-link:hover {
+            color:rgb(215, 248, 247);
+        }
         @media screen and (max-width: 991px) {
         .footer-bottom {
             flex-direction: column;
@@ -416,12 +483,6 @@
         .footer-bottom {
             margin-top: 40px;
             flex-wrap: wrap;
-        }
-        .right-block {
-            max-width: 330px;
-            /*margin-bottom: 26px;*/
-            margin-left: 0px;
-            align-self: center;
         }
         }
         @media screen and (max-width: 479px) {
@@ -492,7 +553,7 @@
                         </div>
                     </div>
                     <div class="right-block">
-                        <img src="src/images/dex-light-cropped.jpg" loading="eager" width="320px" height="auto" alt="" class="image-3">
+                        <img src="src/images/dex-light-cropped.jpg" loading="eager" height="auto" alt="" class="image-3">
                         <!-- <img src="src/images/about-dex.png" loading="lazy" data-w-id="dc412507-998c-00fe-fced-b3aa54cf4ecb" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" alt="" class="image-7">
                         <img src="src/images/about-dex2.png" loading="lazy" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" data-w-id="6c0ca79c-6f56-454a-a394-807aaef2fc9a" alt="" class="image-8"> -->
                     </div>
@@ -549,7 +610,7 @@
           <div class="footer-wrapper">
             <div class="div-block-2"><img src="images/love_icon.svg" loading="lazy" alt="" class="image-5"></div>
             <h5 class="heading-5">© Made by 
-                <a href="https://1hive.gitbook.io/1hive/community/swarms/buzz" target="_blank" class="link"> WZDM Management Agency, LLC </a>
+                <a href="https://1hive.gitbook.io/1hive/community/swarms/buzz" target="_blank" class="dev-link"> WZDM Management Agency, LLC </a>
             </h5>
           </div>
         </div>
