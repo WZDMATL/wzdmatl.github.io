@@ -166,6 +166,7 @@
         }
         .nav-link.launch-link {
             color:white;
+            padding-left: 15px;
         }
         .launch-link {
             padding:2px 15px; 
@@ -194,6 +195,9 @@
         span.logo-title {
             font-size: 12px;
         }
+        .logo {
+            width: 126px;
+        } 
         }
 
 
@@ -359,7 +363,7 @@
         }
         @media screen and (max-width: 882px) {
         .hero {
-            padding: 128px 46px 115px 65px;
+            padding: 155px 46px 115px 65px;
         }
         .right-block {
             margin-left: -140px;
@@ -380,6 +384,7 @@
             text-align: center;
             margin: 0px;
             font-size: 35px;
+            margin-top: 15px;
             margin-bottom: 20px;
         }
         .div-block-6 {
@@ -429,6 +434,7 @@
         }
         .hero-heading {
             font-size: 28px;
+            margin-top: 20px;
         }
         .flexbox.hero-flexbox {
             margin-bottom: 0px;
@@ -452,7 +458,17 @@
             padding-bottom: 8px;
         }
         }
-
+        @media screen and (max-width: 360px) {
+        img.image-3 {
+            margin: 0px -7px 0px 0px;
+        }
+        }    
+        @media screen and (max-width: 341px) {
+        img.image-3 {
+            width: 187px;
+            border-radius: 15px;
+        }
+        }
 
 
 
@@ -492,8 +508,23 @@
             font-weight: 400;
             font-size: 20px;
         }
+        @media screen and (max-width: 341px) {
+        img.dark-mode,
+        img.light-mode {
+            width: 162px;
+            border-radius: 15px;
+        }
+        }
 
-
+        /*FEATURES COLUMNS STYLING */
+        .feat-col {
+            margin-bottom: 40px;
+        }
+        @media screen and (max-width: 991px) {
+        h2 {
+            margin: 0 30px;
+        }
+        }
 
 
         /* SLIDER STYLING */
@@ -549,9 +580,9 @@
         .accordion {
             margin: 0 200px;
         }
-        .accordion-item {
+        /*.accordion-item {
             border: 1px solid #2c3437;
-            }
+            }*/
         .accordion-item:first-of-type {
             background: transparent;
         }
@@ -582,17 +613,58 @@
             font-size: 21px;
             font-family: Poppins, sans-serif;
         }
+        .image-4{
+            margin: 0px 5px 0px 0px;
+            box-shadow:rgba(145, 145, 145, 0.187) 0px 2px 29px 0px;
+        }
+        @media screen and (min-width: 1168px) {
+        .image-4 {
+            width: 520px;
+        }
+        }
+        @media screen and (max-width: 1168px) {
+        .image-4 {
+            margin: 0px 20px 0px 0px;
+            width: 370px;
+        }
+        }
         @media screen and (max-width: 991px) {
         .accordion {
             margin: 0 100px;
+        }
+        .image-4 {
+            margin: 0px 5px 0px 0px;
+            width: 226px; 
         }
         }
         @media screen and (max-width: 767px) {
         .accordion {
             margin: 0 50px;
         }
+        .image-4 {
+            margin: 0px 5px 0px 0px;
         }
-
+        }
+        @media screen and (max-width: 476px) {
+        .accordion {
+            margin: 0 25px;
+        }
+        .accordion-item:not(:first-of-type) .accordion-button,
+        .accordion-item:first-of-type .accordion-button {
+            font-size: 15px;
+        }
+        .image-4 {
+            width: 179px;
+        }
+        }
+        @media screen and (max-width: 380px) {
+        .accordion-body {
+            font-size: 14px;
+        } 
+        .accordion {
+            margin: 0 10px;
+        }
+        }
 
 
         /* FOOTER STYLING */
@@ -619,11 +691,13 @@
         .heading-5 {
             margin-top: 0px;
             margin-bottom: 0px;
-            margin-left: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
             padding-top: 10px;
             padding-bottom: 10px;
             color: #fff;
             font-size: 16px;
+            line-height: 20px;
         }
         .dev-link {
             color: white;
@@ -772,17 +846,17 @@
         <br />
         <div class="container">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm feat-col">
                     <img src="src/images/matic-logo copy.png" width="126" height="auto" class="features" alt="Deployed on Polygon Network">
                     <h3>Lowest Fees on the Blockchain</h3>
                     <p>Polygon Network</p>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm feat-col">
                     <img src="src/images/walletconnect.png" width="126" height="auto" class="features" alt="ConnectWallet">
                     <h3>Connect to Any Wallet</h3>
                     <p>Metamask and more!</p>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm feat-col">
                     <img src="src/images/multichain-logo.png" width="126" height="auto" class="features" alt="Multichain Capabilities">
                     <h3>Multichain Capabilities</h3>
                     <p>Connect Multiple Blockchains</p>
@@ -937,7 +1011,7 @@
                     Make sure you never share or show your secret recovery phrase to anyone. Sharing your secret recovery phrase is the easiest way crypto is stolen from virtual wallets.
                     <br />
                     <br />
-                    <a href=“https://medium.com/@rvk_rishikesh/setting-up-metamask-mobile-application-on-android-device-da279f2c30f1” target=“_blank” style="color:rgb(1, 208, 255); text-decoration:underline;">Click here</a> for further instructions.
+                    <a href="https://medium.com/@rvk_rishikesh/setting-up-metamask-mobile-application-on-android-device-da279f2c30f1" target="_blank" style="color:rgb(1, 208, 255); text-decoration:underline;">Click here</a> for further instructions.
                     <br />
                     <br />
                     Next, go to the “Browser” in your Metamask menu. Copy and paste the link shown below into your Metamask browser.  
@@ -947,12 +1021,12 @@
                     <br />
                     Connect your Metamask wallet by clicking the blue button in the image below. If ConnectWallet pops up, click the Metamask icon.
                     <br />
-                    <img src="src/images/dex-light-cropped.jpg" height="auto" alt="WZDM Management Agency DEX" class="image-3">
+                    <img src="src/images/dex-light-cropped.jpg" height="auto" alt="WZDM Management Agency DEX" class="image-4" id="accord-img">
                     <br />
                     <br />
                     Once, you are connected, the button on the screen will become gradient like the image below.
                     <br />
-                    <img src="src/images/dex-gradient.jpg" height="auto" alt="WZDM Management Agency DEX Wallet Connected" class="image-3">
+                    <img src="src/images/dex-gradient.jpg" height="auto" alt="WZDM Management Agency DEX Wallet Connected" class="image-4" id="accord-img">
                     <br />
                     <br />
                     Enjoy the example!
@@ -1037,7 +1111,7 @@
           <div class="footer-wrapper">
             <div class="div-block-2"><img src="images/love_icon.svg" loading="lazy" alt="" class="image-5"></div>
             <h5 class="heading-5">© Made by 
-                <a href="https://1hive.gitbook.io/1hive/community/swarms/buzz" target="_blank" class="dev-link"> WZDM Management Agency, LLC </a>
+                <a href="http://wzdmatl.com/webdev" target="_blank" class="dev-link"> WZDM Management Agency, LLC </a>
             </h5>
           </div>
         </div>
