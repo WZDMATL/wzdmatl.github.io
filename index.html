@@ -23,8 +23,8 @@
         :root {
             --primary-color: radial-gradient(
                 circle at 7.5% 24%,
-                rgb(160, 151, 235) 0%,
-                rgb(32, 46, 236) 25.5%,
+                rgb(151, 230, 235) 0%,
+                rgb(0, 181, 247) 25.5%,
                 rgb(31, 229, 255) 62.3%,
                 rgb(215, 248, 247) 93.8%
             );
@@ -86,7 +86,12 @@
             /* padding: 10px; */
         }
         span.logo-title {
-            font-size: 12px;
+            font-size: 19px;
+            z-index: 100;
+            position:relative;
+            font-family: Poppins, sans-serif;
+            font-weight: 700;
+            color: rgb(179, 179, 179);
         }
         .navbar {
             background: transparent;
@@ -133,6 +138,8 @@
             /* margin-bottom: -10px; */
             z-index: 10;
             position:relative;
+            width:162px;
+            height: auto;
         }
         .d-block {
             display: flow-root;
@@ -157,9 +164,12 @@
         .nav-link:hover {
             color: black;
         }
+        .nav-link.launch-link {
+            color:white;
+        }
         .launch-link {
             padding:2px 15px; 
-            background:hsla(0, 0%, 99%, 0.598); 
+            background:hsla(192, 100%, 50%, 0.598); 
             border:none; border-radius:12px;
             margin-top:5px;
             margin-left:5px;
@@ -182,7 +192,7 @@
         }
         @media (max-width: 385px) {
         span.logo-title {
-            font-size: 9px;
+            font-size: 12px;
         }
         }
 
@@ -291,6 +301,7 @@
         }
         .image-3{
             margin: 0px 5px 0px 0px;
+            box-shadow:rgba(145, 145, 145, 0.187) 0px 2px 29px 0px;
         }
         .image-7 {
             position: absolute;
@@ -463,6 +474,10 @@
             font-weight: 300;
             font-size: 15px;
         }
+        img.dark-mode,
+        img.light-mode {
+            box-shadow: rgba(6, 226, 255, 0.345) 0px 2px 29px 0px;
+        }
         .dark-light-mode {
             background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
             /*background-color:rgba(0, 0, 0, 0.3);
@@ -479,6 +494,49 @@
         }
 
 
+
+
+        /* SLIDER STYLING */
+        .slider-three {
+            height: 250px;
+            margin-top: 20px;
+            position: static;
+            width: 100%;
+            display: grid;
+            place-items: left;
+            overflow: hidden;
+            }
+        .slide-track {
+            display: flex;
+            width: 250px;
+            animation: scroll 25s linear running infinite;
+            }
+        .slide-track:hover {
+            animation-play-state: paused;
+            }
+            @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 9));
+            }
+            }
+        .slide {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            perspective: 100px;
+            box-sizing: content-box;
+            width: 1000px;
+            margin: 0 20px;
+            }
+        .icons {
+            width: 95px;
+            height: auto;
+        }
+
+
         /* WRAPPER PARALLAX */
         #scroll-animate,
         #scroll-animate-main,
@@ -490,6 +548,39 @@
         /* ACCORDION STYLE */
         .accordion {
             margin: 0 200px;
+        }
+        .accordion-item {
+            border: 1px solid #2c3437;
+            }
+        .accordion-item:first-of-type {
+            background: transparent;
+        }
+        .accordion-item:not(:first-of-type) {
+            border-top: 0;
+            background: transparent;
+        }
+        .accordion-button:not(.collapsed) {
+            color: rgb(255, 255, 255);
+        }
+        .accordion-item:first-of-type .accordion-button {
+            /*background: linear-gradient(-20deg, #c7c7c7 0%, #2c3437 100%);*/
+            background: var(--primary-color);
+            box-shadow: 0px 0px 20px #d4d4d4;
+            color: #2c3437;
+            font-family: Poppins, sans-serif;
+            font-size: 20px;
+        }
+        .accordion-item:not(:first-of-type) .accordion-button {
+            /*background: linear-gradient(-20deg, #c7c7c7 0%, #2c3437 100%);*/
+            background: var(--primary-color);
+            box-shadow: 0px 0px 20px #d4d4d4;
+            color: #2c3437;
+            font-family: Poppins, sans-serif;
+            font-size: 20px;
+        }
+        .accordion-body {
+            font-size: 21px;
+            font-family: Poppins, sans-serif;
         }
         @media screen and (max-width: 991px) {
         .accordion {
@@ -507,6 +598,7 @@
         /* FOOTER STYLING */
         footer {
             background-color: #2c3437;
+            font-family: Poppins, sans-serif;
         }
         h5 {
             line-height: 44px;
@@ -571,9 +663,15 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="http://www.wzdmatl.github.com/dex">
-                <img src="src/images/logo-light64.png" class="logo d-none d-md-block" alt="WZDM DEX Template">
-                <img src="src/images/logo-light64.png" class="logo d-block d-md-none" alt="WZDM DEX Template">
-                <!-- <span class="logo-title">WZDM Blockchain Templates</span> -->
+                <!--<div class="row">
+                    <div class="col-sm">-->
+                        <img src="src/images/dex-logo-text-lg.png" class="logo d-none d-md-block" alt="WZDM DEX Template">
+                        <img src="src/images/dex-logo-text-lg.png" class="logo d-block d-md-none" alt="WZDM DEX Template">
+                    <!--</div>
+                    <div class="col-sm">
+                        <span class="logo-title">WZDM Blockchain Templates</span>
+                    </div>
+                </div>-->
             </a>
             <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -618,7 +716,7 @@
                         </h1>
                         <div class="div-block-6">
                             <a href="https://wzdmatl.github.com/dex" class="button w-button">Launch App</a>
-                            <a href="#" target="_blank" class="ghost-button w-button">Learn More</a>
+                            <a href="#learn-more" class="ghost-button w-button">Learn More</a>
                         </div>
                     </div>
                     <div class="right-block">
@@ -696,40 +794,235 @@
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
 
+        <div>
+            <h2>Coins on the DEX</h2>
+            <p>Add coins as you go</p>
+        </div>
+        <div class="slider-three">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="src/images/token logos/0x-zrx-logo.png" class="icons" alt="figma">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/aave-aave-logo.png" class="icons" alt="invision app freehand">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/aragon-ant-logo.png" class="icons" alt="adobe xd">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/augur-rep-logo.png" class="icons" alt="adobe photoshop">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/balancer-bal-logo.png" class="icons" alt="adobe indesign">
+          </div>
+           <div class="slide">
+            <img src="src/images/token logos/bancor-bnt-logo.png" class="icons" alt="figma">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/band-protocol-band-logo.png" class="icons" alt="invision app freehand">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/binance-coin-bnb-logo.png" class="icons" alt="adobe xd">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/chainlink-link-logo.png" class="icons" alt="adobe photoshop">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/civic-cvc-logo.png" class="icons" alt="adobe indesign">
+          </div>
+           <div class="slide">
+            <img src="src/images/token logos/compound-usd-coin-cusdc-logo.png" class="icons" alt="figma">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/curve-dao-token-crv-logo.png" class="icons" alt="invision app freehand">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/decentraland-mana-logo.png" class="icons" alt="adobe xd">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/district0x-dnt-logo.png" class="icons" alt="adobe photoshop">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/enzyme-mln-logo.png" class="icons" alt="adobe indesign">
+          </div>
+           <div class="slide">
+            <img src="src/images/token logos/ethereum-eth-logo.png" class="icons" alt="figma">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/keep-network-keep-logo.png" class="icons" alt="invision app freehand">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/loom-network-loom-logo.png" class="icons" alt="adobe xd">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/loopring-lrc-logo.png" class="icons" alt="adobe photoshop">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/maker-mkr-logo.png" class="icons" alt="adobe indesign">
+          </div>
+           <div class="slide">
+            <img src="src/images/token logos/multi-collateral-dai-dai-logo.png" class="icons" alt="figma">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/nucypher-nu-logo.png" class="icons" alt="invision app freehand">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/numeraire-nmr-logo.png" class="icons" alt="adobe xd">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/orchid-oxt-logo.png" class="icons" alt="adobe photoshop">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/polygon-matic-logo.png" class="icons" alt="adobe indesign">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/ren-ren-logo.png" class="icons" alt="adobe photoshop">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/storj-storj-logo.png" class="icons" alt="adobe indesign">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/synthetix-network-token-snx-logo.png" class="icons" alt="invision app freehand">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/tether-usdt-logo.png" class="icons" alt="adobe xd">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/the-graph-grt-logo.png" class="icons" alt="adobe photoshop">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/uma-uma-logo.png" class="icons" alt="adobe indesign">
+          </div>
+           <div class="slide">
+            <img src="src/images/token logos/uniswap-uni-logo.png" class="icons" alt="figma">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/usd-coin-usdc-logo.png" class="icons" alt="invision app freehand">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/wrapped-bitcoin-wbtc-logo.png" class="icons" alt="adobe xd">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/yearn-finance-yfi-logo.png" class="icons" alt="adobe photoshop">
+          </div>
+          <div class="slide">
+            <img src="src/images/token logos/amp-amp-logo.png" class="icons" alt="adobe indesign">
+          </div>
+          </div>
+          </div>
+
+
+        <br />
+          <div>
+            <h2 id="learn-more">Learn More</h2>
+        </div>
+        <br />
+        <br />
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Accordion Item #1
+                    How do I pull up the DEX in this example on mobile?
                 </button>
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                <div class="accordion-body">
+                    You need to download the Metamask app.
+                    <br /> 
+                    <a href="https://play.google.com/store/apps/details?id=io.metamask&hl=en_US&gl=US" target="_blank" style="color:rgb(1, 208, 255); text-decoration:underline;">Download on Google Play</a>
+                    <br />
+                    <a href="https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202" target="_blank" style="color:rgb(1, 208, 255); text-decoration:underline;">Download on Apple Store</a>
+                    <br />
+                    Make sure you never share or show your secret recovery phrase to anyone. Sharing your secret recovery phrase is the easiest way crypto is stolen from virtual wallets.
+                    <br />
+                    <br />
+                    <a href=“https://medium.com/@rvk_rishikesh/setting-up-metamask-mobile-application-on-android-device-da279f2c30f1” target=“_blank” style="color:rgb(1, 208, 255); text-decoration:underline;">Click here</a> for further instructions.
+                    <br />
+                    <br />
+                    Next, go to the “Browser” in your Metamask menu. Copy and paste the link shown below into your Metamask browser.  
+                    <br />
+                    <code>http://wzdmatl.github.com/dex</code>
+                    <br />
+                    <br />
+                    Connect your Metamask wallet by clicking the blue button in the image below. If ConnectWallet pops up, click the Metamask icon.
+                    <br />
+                    <img src="src/images/dex-light-cropped.jpg" height="auto" alt="WZDM Management Agency DEX" class="image-3">
+                    <br />
+                    <br />
+                    Once, you are connected, the button on the screen will become gradient like the image below.
+                    <br />
+                    <img src="src/images/dex-gradient.jpg" height="auto" alt="WZDM Management Agency DEX Wallet Connected" class="image-3">
+                    <br />
+                    <br />
+                    Enjoy the example!
+                    <br />
+                    <br />
+                    <small>This is a simulated account. It does not contain liquidity, but you can test it by adding any amount of liquidity and making a small exchange. You can also add a token. </small>
+                </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    Accordion Item #2
+                    What is a DEX?
                 </button>
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                <div class="accordion-body">A decentralized exchange, or DEX for short, is a peer-to-peer marketplace where crypto traders make transactions directly between one another. These transactions are not officiated by banks, brokers, or any other intermediary. A trader can trade one crypto currency token for another directly on the blockchain. Tokens traders go to your virtual wallet.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Accordion Item #3
+                    Why do I need a DEX?
                 </button>
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                <div class="accordion-body">
+                    In 2021, over $200 billion USD in transactions flowed through decentralized exchanges. It’s safe to say, they are the next big thing in finance. There are over two million DeFi traders, and it’s growing by the millions each quarter. 
+                    <br />
+                    <br />
+                    As a liquidity provider, you add crypto to the liquidity pool and reap rewards. The fee you earn is proportional to the amount of liquidity they have supplied, usually set at 3% but could be lower or higher.
+                    <br /> 
+                    <br /> 
+                    In addition, a DEX can supplement your brand. Do you have a token you want developed? Are you building an online community? Do you believe people have a right to anonymity? The links to and from your DEX can add the marketing boost your brand needs to compete in a future dominated by the blockchain. All this is made popular with a DEX. Anyone with a smartphone can participate, which means the market is large. When you get in now, you’re getting in at the start of a revolution.
+                </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    Can I create and add my own tokens?
+                </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Yes, you can create and add any token. Even those that were not created by you. All you need is a token address.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    Can I add links to a DAO to complement by DEX?
+                </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Yes, in the development process, we can add links to your decentralized autonomous organization, also known as a DAO. <a href="https://www.investopedia.com/tech/what-dao/" target="_blank" style="color:black; text-decoration:underline;">Click here</a> to learn more about DAOs.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                    How much will the development cost me?
+                </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    The development of a simple DEX like the one in this example is $1,500 USD and can be created in as little as 2 to 4 weeks, depending on the complexity. Acceptable changes are font style, color and logo only. Additional links and customizations are $3,500.
+                    <br />
+                    <br />
+                    To get your DEX, please contact the WZDM Developer at <a href="https://calendly.com/wzdm/session" target="_blank" style="color:black; text-decoration:underline;">this link</a>. Please do not send money before discussing your project with the developer. Discussions will take place via mobile texting for a simple DEX or a 15-minute phone call for customizations that require a discussion.  
+                </div>
                 </div>
             </div>
         </div>
@@ -758,63 +1051,5 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
-    <!-- <script>
-        function scrollFooter(scrollY, heightFooter)
-            {
-                console.log(scrollY);
-                console.log(heightFooter);
-
-                if(scrollY >= heightFooter)
-                {
-                    $('footer').css({
-                        'bottom' : '0px'
-                    });
-                }
-                else
-                {
-                    $('footer').css({
-                        'bottom' : '-' + heightFooter + 'px'
-                    });
-                }
-            }
-
-            $(window).load(function(){
-                var windowHeight        = $(window).height(),
-                    footerHeight        = $('footer').height(),
-                    heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height()) - 20;
-
-                // Definindo o tamanho do elemento pra animar
-                $('#scroll-animate, #scroll-animate-main').css({
-                    'height' :  heightDocument + 'px'
-                });
-
-                // Definindo o tamanho dos elementos header e conteúdo
-                $('header').css({
-                    'height' : windowHeight + 'px',
-                    'line-height' : windowHeight + 'px'
-                });
-
-                $('.wrapper-parallax').css({
-                    'margin-top' : windowHeight + 'px'
-                });
-
-                scrollFooter(window.scrollY, footerHeight);
-
-                // ao dar rolagem
-                window.onscroll = function(){
-                    var scroll = window.scrollY;
-
-                    $('#scroll-animate-main').css({
-                        'top' : '-' + scroll + 'px'
-                    });
-                    
-                    $('header').css({
-                        'background-position-y' : 50 - (scroll * 100 / heightDocument) + '%'
-                    });
-
-                    scrollFooter(scroll, footerHeight);
-                }
-            });
-    </script> -->
 </body>
 </html>
