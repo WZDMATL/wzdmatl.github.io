@@ -118,13 +118,23 @@
             /* margin-top: -23px; */
             /* margin-bottom: -3px; */
         }
-        .navbar-toggler {
+        .custom-toggler.navbar-toggler {
             z-index: 5;
             position: relative;
+            padding: 0.25rem 0.75rem;
+            font-size: 1.25rem;
+            line-height: 1;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+            transition: box-shadow .15s ease-in-out;
         }
-        .navbar-toggler:focus,
-        .navbar-toggler:active,
-        .navbar-toggler-icon:focus {
+        .custom-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(135, 135, 135, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+        .custom-toggler.navbar-toggler:focus,
+        .custom-toggler.navbar-toggler:active,
+        .custom-toggler.navbar-toggler-icon:focus {
             outline: none;
             box-shadow: none;
         }
@@ -147,19 +157,14 @@
         .nav-item {
             padding: 0 10px;
         }
-        .navbar-light .navbar-nav .nav-link {
-            font-size: 16px;
-            letter-spacing: 0.05em;
-            font-weight: 400;
-        }
-        .navbar-light .navbar-toggler {
-            color: rgb(247, 247, 247);
-            border-color: rgba(0, 0, 0, 0);
-        }
+        
         .nav-link {
             color: rgb(135 135 135);
             z-index: 10;
             position:relative;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            font-weight: 400;
         }
         .nav-link:hover {
             color: black;
@@ -747,7 +752,7 @@
                     </div>
                 </div>-->
             </a>
-            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
