@@ -460,6 +460,97 @@
         }
 
 
+        /* LEAVE AN EMAIL STYLING */
+        form {
+            text-align: left;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: Poppins, sans-serif;
+            }
+        input {
+            padding: 7px 25px;
+            font-size: 15px;
+            font-family: Poppins, sans-serif;
+            }
+        input {
+            border: 1px solid black;
+            border-radius: 5px;
+            background: transparent;
+            color: inherit;
+            }
+        /*form {
+            margin: 0 500px;
+            font-family: Poppins, sans-serif;
+        }*/
+        button.btn.submit {
+            color:white;
+            padding:12px 35px; 
+            background:#2c3437; 
+            border:none; 
+            border-radius:7px;
+            margin-top:5px;
+            margin-left:5px;
+            -webkit-transition:all 200ms ease;
+            transition:all 200ms ease;
+        }
+        button.btn.submit:hover {
+            background: #60E1ED;
+            color: white;
+        }
+        #email {
+            margin-bottom: 20px;
+        }
+
+
+
+        /* LEAVE AN EMAIL STYLING */
+        form {
+            text-align: left;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: Poppins, sans-serif;
+            color: white;
+            }
+        input {
+            padding: 7px 25px;
+            font-size: 15px;
+            font-family: Poppins, sans-serif;
+            }
+        input {
+            border: 1px solid black;
+            border-radius: 5px;
+            background: transparent;
+            color: inherit;
+            }
+        /*form {
+            margin: 0 500px;
+            font-family: Poppins, sans-serif;
+        }*/
+        button.btn.submit {
+            color:#2c3437;
+            padding:12px 35px; 
+            background: white; 
+            border:none; 
+            border-radius:7px;
+            margin-top:5px;
+            margin-left:5px;
+            -webkit-transition:all 200ms ease;
+            transition:all 200ms ease;
+        }
+        button.btn.submit:hover {
+            background: #60E1ED;
+            color: white;
+        }
+        #email {
+            margin-bottom: 20px;
+            color: white;
+            text-align: center;
+            font-family: Poppins, sans-serif;
+        } 
+
+
 
 
         /* FOOTER STYLING */
@@ -545,25 +636,25 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" title="Homepage">Home</a>
+                    <a class="nav-link active" aria-current="page" href="../index.html" title="Homepage">Home</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="http://www.wzdmatl.github.com/dex" title="DEX">DEX</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="project/about.html" title="Exclusive Content for NFT Holders">Exclusive Content</a>
+                    <a class="nav-link" href="exclusivecontent.html" title="Exclusive Content for NFT Holders">Exclusive Content</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="project/work.html" title="NFT Holders Mint Free">Mint Free</a>
+                    <a class="nav-link" href="#" title="NFT Holders Mint Free">Mint Free</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="https://calendly.com/wzdm/session" title="Contact Amethyst">Contact</a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link launch-link" href="http://wzdmatl.github.com/dex" target="_blank"
                         >Launch App
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
         </div>
@@ -582,10 +673,10 @@
                             <br />
                             for free
                         </h1>
-                        <div class="div-block-6">
+                        <!--<div class="div-block-6">
                             <a href="https://wzdmatl.github.com/dex" class="button w-button">Launch App</a>
                             <a href="#learn-more" class="ghost-button w-button">Learn More</a>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="right-block">
                         <img src="images/mintfree.png" loading="eager" height="auto" alt="" class="image-3">
@@ -596,10 +687,35 @@
             </div>
         </div>
     </header>
+
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+          <div>
+            <h2 id="email">Drop an email and someone will reach out to you in less than 24 hours</h2>
+            <div class="container">
+            <form action="https://sheetdb.io/api/v1/pfxnl0k3hfcdi" method="POST" id="sheetdb-form">
+                <div class="mb-3 form-margin">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="data[email]">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <button type="submit" class="btn submit">Submit</button>
+            </form>
+            </div>
+        </div>
+        <br />
+        <br />
+
+
+
     <footer>
         <div class="footer-bottom">
           <div class="footer-wrapper">
-            <div class="div-block-2"><img src="images/love_icon.svg" loading="lazy" alt="" class="image-5"></div>
             <h5 class="heading-5">© Made by 
                 <a href="http://wzdmatl.com/webdev" target="_blank" class="dev-link"> WZDM Management Agency, LLC </a>
             </h5>
@@ -615,5 +731,20 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+    <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method : "POST",
+                body: new FormData(document.getElementById("sheetdb-form")),
+            }).then(
+                response => response.json()
+            ).then((html) => {
+            // you can put any JS code here
+            alert('Your entry is successful! Look for an email within the next 24 hours.')
+            });
+        });
+    </script>
 </body>
 </html>
